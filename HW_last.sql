@@ -21,30 +21,14 @@ FROM salary
 left join employee_salary on employee_salary.salary_id = salary.id
 WHERE employee_salary.employee_id > 70 or employee_salary.salary_id IS NULL;
 
------
-от кати
-select employee_name, monthly_salary from employees e 
-right join employee_salary es on e.id = es.employee_id
-right join salary s on es.salary_id = s.id
-where employee_name is null;
 
-
-
-
-SELECT monthly_salary, salary.id, employee_salary.employee_id
-FROM salary
-FULL OUTER JOIN employee_salary ON employee_salary.salary_id = salary.id
-WHERE employee_salary.salary_id IS NULL
-    OR salary.id IS NULL
-or employee_salary.employee_id > 70;
-----
 
 SELECT monthly_salary
 from salary
 left join employee_salary on employee_salary.salary_id = salary.id
 WHERE employee_salary.salary_id IS NULL;
 
-------------- нужно ли OR???
+------------- 
 SELECT monthly_salary, salary.id, employee_salary.employee_id
 FROM employees
 right join employee_salary on employees.id = employee_salary.employee_id
